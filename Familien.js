@@ -1,13 +1,14 @@
 import React from 'react';
-import { shape, string } from 'prop-types';
+import { node, string } from 'prop-types';
 import AnneKristine from './AnneKristine';
 import Selbekk from './Selbekk';
 
-const Familien = ({ rolleSelbekk = "pappa", rolleAnneKristine = "mamma" }) => {
+const Familien = ({ rolleSelbekk = "pappa", rolleAnneKristine = "mamma", children }) => {
   return (
     <React.Fragment>
       <Selbekk />
       <AnneKristine />
+      { children }
     </React.Fragment>
   )
 };
@@ -15,6 +16,7 @@ const Familien = ({ rolleSelbekk = "pappa", rolleAnneKristine = "mamma" }) => {
 Familien.propTypes = {
   rolleSelbekk: string.isRequired,
   rolleAnneKristine: string.isRequired,
+  children: node.isRequired,
 }
 
 export default Familien;
